@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import "./Validator.css"
 
-class Validator extends Component {
+
+class Input extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -46,16 +46,15 @@ class Validator extends Component {
   render () {
     let validText = this.state.valid ? "Valid!" : "Passwords do not match"
     return (
-      <div className="form">
-        <h1>Sign Up</h1>
-        <input onChange={(e) => this.handleEmail(e)} type="text" placeholder="email" />
-        <input onChange={(e) => this.handlePassword(e)} type="password" placeholder="password" />
-        <input onChange={(e) => this.handlePasswordConfirm(e)} type="password" placeholder="confirm password" />
-        <input type="submit" onClick={(e) => this.handleSubmit(e)} value="Submit" />
-        <p>{validText}</p>
+        <div>
+          <input onChange={(e) => this.handleEmail(e)} type="text" placeholder="email" />
+          <input onChange={(e) => this.handlePassword(e)} type="password" placeholder="password" />
+          <input onChange={(e) => this.handlePasswordConfirm(e)} type="password" placeholder="confirm password" />
+          <input type="submit" onClick={(e) => this.handleSubmit(e)} value="submit" />
+          <p>{validText}</p>
       </div>
     );
   }
 }
 
-export default Validator;
+export default Input;
